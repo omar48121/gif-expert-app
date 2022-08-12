@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GiftExpertApp = () => {
-  const [categories, setCategories] = useState(["One Punch", "The boys"]);
+  const [categories, setCategories] = useState(["The boys"]);
 
   //console.log(import.meta.env.VITE_API_KEY);
   const onAddCategory = (category) => {
@@ -16,11 +17,9 @@ export const GiftExpertApp = () => {
       <h1>GiftExpertApp</h1>
 
       <AddCategory onNewCategory={onAddCategory} />
-      <ol>
-        {categories.map((item) => (
-          <li key={item}>{item}</li>
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
         ))}
-      </ol>
     </>
   );
 };
