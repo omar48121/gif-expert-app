@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components/";
 
 export const GiftExpertApp = () => {
   const [categories, setCategories] = useState(["The boys"]);
 
-  //console.log(import.meta.env.VITE_API_KEY);
   const onAddCategory = (category) => {
     if (categories.includes(category)) return;
 
@@ -14,7 +12,7 @@ export const GiftExpertApp = () => {
 
   return (
     <>
-      <h1>GiftExpertApp</h1>
+      <h1>GifExpertApp</h1>
 
       <AddCategory onNewCategory={onAddCategory} />
         {categories.map((category) => (
